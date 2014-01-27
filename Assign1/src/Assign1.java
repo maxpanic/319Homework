@@ -59,7 +59,8 @@ public class Assign1 {
     // Generate desired array order; descending, random, or ascending.
     if(Order.intern()=="descending"){
 	    for(int i = a.length-1; i>0; i-- ){
-	        a[i]=(i);
+	        a[i]=(i*(int)(Math.random()*100));
+	        System.out.println(a[i]);
 	    }
     }
     if(Order.intern()=="random"){
@@ -69,13 +70,13 @@ public class Assign1 {
     }
     if(Order.intern()=="ascending"){
 	    for(int i = 0; i<a.length; i++ ){
-	        a[i]=(i);
+	        a[i]=(i*(int)(Math.random()*100));
 	    }
     }
     // End array generation types.
     
     // Use comparison of Type to determine the sorting method.
-    // Start timing just before sort method call, and end timing when it returns.
+    // Start timing just before each sort method call, and end timing when it returns.
     // Print time to system and file.
     if(Type.intern()=="bubble"){
     	double start = System.currentTimeMillis();
@@ -105,12 +106,14 @@ public class Assign1 {
         pWriter.println(end-start);
     	System.out.println(end-start);
     }
+    // End sort methods.
 
     // Print the sorted array to the file, one line per entry.
-	//    for(int i = 0; i<a.length; i++ ){
-	//       	pWriter.println(a[i]);
-	//    }
-    // For printing agument information in the file
+	    for(int i = 0; i<a.length; i++ ){
+	       	pWriter.println(a[i]);
+	    }
+   
+	// For printing agument information in the file
     pWriter.println(args[0] + " " + args[1] + " " + args[2]);
     pWriter.close(); // Close the file.
 	}
