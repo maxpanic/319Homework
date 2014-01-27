@@ -1,18 +1,12 @@
 
-import java.util.*;
+//import java.util.*;
 
 public class Merge {
-    public static void main(String[] args) {
-        int[] list = {14, 32, 67, 76, 23, 41, 58, 85};
-        System.out.println("before: " + Arrays.toString(list));
-        mergeSort(list);
-        System.out.println("after:  " + Arrays.toString(list));
-    }
-
     // Places the elements of the given array into sorted order
     // using the merge sort algorithm.
     // post: array is in sorted (nondecreasing) order
     public static void mergeSort(int[] array) {
+    	
         if (array.length > 1) {
             // split array into two halves
             int[] left = leftHalf(array);
@@ -24,9 +18,8 @@ public class Merge {
             
             // merge the sorted halves into a sorted whole
             merge(array, left, right);
-        }
-    }
-    
+        }   
+    }   
     // Returns the first half of the given array.
     public static int[] leftHalf(int[] array) {
         int size1 = array.length / 2;
@@ -35,8 +28,7 @@ public class Merge {
             left[i] = array[i];
         }
         return left;
-    }
-    
+    }   
     // Returns the second half of the given array.
     public static int[] rightHalf(int[] array) {
         int size1 = array.length / 2;
